@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS Departaments(
+	id SERIAL PRIMARY KEY,
+	dep_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Staff(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	surname VARCHAR(255) NOT NULL,
+	patronymic VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS DepHead(
+	dep_id INTEGER UNIQUE REFERENCES Departaments(id),
+	emp_id INTEGER REFERENCES Staff(id),
+	CONSTRAINT "pk_dephead" PRIMARY KEY (dep_id, emp_id)
+);
