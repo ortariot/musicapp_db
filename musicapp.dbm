@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.3" use-changelog="false" last-position="16,0" last-zoom="1" max-obj-count="9"
+<dbmodel pgmodeler-ver="0.9.3" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="9"
 	 default-schema="public" default-owner="postgres">
 <database name="musicapp" is-template="false" allow-conns="true">
 </database>
@@ -63,14 +63,14 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="720" y="400"/>
-	<column name="id_album" not-null="true">
+	<column name="album_id" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
-	<column name="id_artist" not-null="true">
+	<column name="artist_id" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
 	<constraint name="ArtistAlbum_pk" type="pk-constr" table="public.&quot;ArtistAlbum&quot;">
-		<columns names="id_artist,id_album" ref-type="src-columns"/>
+		<columns names="artist_id,album_id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
@@ -113,22 +113,22 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="SongsVol" layer="0" collapse-mode="2" max-obj-count="3" z-value="0">
+<table name="SongsVol" layer="0" collapse-mode="1" max-obj-count="3" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="720" y="100"/>
-	<column name="id_vol" not-null="true">
+	<column name="vol_id" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
-	<column name="id_songs" not-null="true">
+	<column name="songs_id" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
 	<constraint name="SongsVol_pk" type="pk-constr" table="public.&quot;SongsVol&quot;">
-		<columns names="id_vol,id_songs" ref-type="src-columns"/>
+		<columns names="vol_id,songs_id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="vol" layer="0" collapse-mode="2" max-obj-count="3" z-value="0">
+<table name="vol" layer="0" collapse-mode="1" max-obj-count="3" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="440" y="40"/>
@@ -160,13 +160,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 
 <constraint name="ref_aa_art" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Artists&quot;" table="public.&quot;ArtistAlbum&quot;">
-	<columns names="id_artist" ref-type="src-columns"/>
+	<columns names="artist_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="ref_aa_al" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Albums&quot;" table="public.&quot;ArtistAlbum&quot;">
-	<columns names="id_album" ref-type="src-columns"/>
+	<columns names="album_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
@@ -178,13 +178,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 
 <constraint name="ref_sv_s" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Songs&quot;" table="public.&quot;SongsVol&quot;">
-	<columns names="id_songs" ref-type="src-columns"/>
+	<columns names="songs_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="ref_sv_v" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.vol" table="public.&quot;SongsVol&quot;">
-	<columns names="id_vol" ref-type="src-columns"/>
+	<columns names="vol_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
