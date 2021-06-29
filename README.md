@@ -11,7 +11,7 @@
 
 # 
 
-## Схема базы данных для musicapp
+## Схема базы данных musicapp
 
 ![схема базы данных](/img/musicapp.png)
 
@@ -31,7 +31,7 @@ SQL-скрипт содержится в файле [musicapp_hw.sql](/musicapp_
 Необходимо написать SQL-запрос, создающий таблицу "Сотрудник", и прислать ссылку на файл с этим запросом.
 
 #
-
+## Схема базы данных DepartamentsStruct
 ![схема базы данных](/img/DepartamentsStruct.png)
 
 SQL-скрипт содержится в файле [DepartamentsStruct_hw.sql](/DepartamentsStruct_hw.sql 'DepartamentsStruct_hw.sql')
