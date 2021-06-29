@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS Staff(
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(255) NOT NULL,
 	surname VARCHAR(255) NOT NULL,
-	patronymic VARCHAR(255)
+	patronymic VARCHAR(255),
+	dep_id INTEGER REFERENCES Departaments(id)
 );
 
 CREATE TABLE IF NOT EXISTS DepHead(
